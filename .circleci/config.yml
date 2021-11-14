@@ -23,7 +23,7 @@ jobs:
           command: |
             aws cloudformation deploy \
               --template-file template.yml \
-              --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
+              --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:7} \
               --region us-east-1
   smoke_test:
     docker:
@@ -34,9 +34,6 @@ jobs:
           # Fail the job intentionally to simulate an error.
           command:  return 1
       - destroy_environment  
-
-
-
 
 workflows:
   my-workflow:
