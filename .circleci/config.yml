@@ -39,6 +39,6 @@ workflows:
   my-workflow:
     jobs:
       - create_infrastructure
-      - smike_test:
+      - smoke_test:
           requires: 
             - create_infrastructure
